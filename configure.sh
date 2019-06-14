@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-mkdirp ~/.config/alacritty
+mkdir -p ~/.config/alacritty
 
 cp .tmux.conf ~/.tmux.conf
 cp alacritty.yml ~/.config/alacritty/alacritty.yml
