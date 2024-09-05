@@ -1,16 +1,18 @@
-require 'utils'
+local Utils = require 'utils'
 
-local Theme = {}
+local M = {}
 
-local theme_path = '../themes/current'
+local config_dir = vim.fn.stdpath('config')
+local theme_path = config_dir .. '/themes/current'
+print(theme_path)
 
-function Theme.load()
-  if file_exists(theme_path) then
+function M.load()
+  if Utils.file_exists(theme_path) then
     vim.cmd('source ' .. theme_path)
   else
-    print('No theme file present at themes/current')
+    print('No theme file present at ' .. theme_path)
   end
 end
 
-return Theme
+return M
 
