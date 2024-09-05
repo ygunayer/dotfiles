@@ -5,3 +5,4 @@ Dotfiles for my personal development environment.
 ```bash
 $ ./configure.sh
 ```
+

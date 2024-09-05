@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
-mkdir -p ~/.config/alacritty
 
-cp .tmux.conf ~/.tmux.conf
-cp alacritty.yml ~/.config/alacritty/alacritty.yml
+mkdir -p ~/.config
+ln -s $(pwd)/nvim ~/.config/nvim
 
-echo "\r\n$(cat .zhrc)" >> ~/.zshrc
