@@ -4,7 +4,6 @@ local M = {}
 
 local config_dir = vim.fn.stdpath('config')
 local theme_path = config_dir .. '/themes/current'
-print(theme_path)
 
 function M.load()
   if Utils.file_exists(theme_path) then
