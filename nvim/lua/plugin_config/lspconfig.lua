@@ -6,6 +6,8 @@ require('mason-lspconfig').setup({
     'elixirls',
     'gopls',
     'clangd',
+    'ts_ls',
+    'pylsp',
   },
 })
 
@@ -45,4 +47,23 @@ lspconfig.gopls.setup({})
 
 -- C, C++
 lspconfig.clangd.setup({})
+
+-- JavaScript, TypeScript
+lspconfig.ts_ls.setup({
+  filetypes = { 'javascript', 'typescript' },
+})
+
+-- Python
+lspconfig.pylsp.setup({
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'W391'},
+          maxLineLength = 120,
+        },
+      },
+    },
+  },
+})
 
