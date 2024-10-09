@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'saadparwaiz1/cmp_luasnip'
 
+  use 'wakatime/vim-wakatime'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -6,3 +6,5 @@ require('plugin_config.lualine')
 require('plugin_config.completions')
 require('plugin_config.lspconfig')
 
+vim.cmd('filetype plugin indent on')
+
