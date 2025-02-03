@@ -6,9 +6,9 @@ require('nvim-tree').setup({
     width = 40,
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
 })
 
-vim.keymap.set('n', '<c-r>', ':NvimTreeFindFile<CR>')
+vim.keymap.set('n', '<C-Home>', ':NvimTreeFindFile<CR>')
 
