@@ -1,6 +1,6 @@
-require('mason').setup({})
+require('mason', {})
 
-require('mason-lspconfig').setup({
+require('mason-lspconfig', {
   ensure_installed = {
     'lua_ls',
     'elixirls',
@@ -11,17 +11,18 @@ require('mason-lspconfig').setup({
   },
 })
 
-local lspconfig = require('lspconfig')
-local lsp_defaults = lspconfig.util.default_config
+local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- local lsp_defaults = vim.lsp.config('util').default_config
 
-lsp_defaults.capabilities = vim.tbl_deep_extend(
-  'force',
-  lsp_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
-)
+--lsp_defaults.capabilities = vim.tbl_deep_extend(
+--  'force',
+--  lsp_defaults.capabilities,
+--  require('cmp_nvim_lsp').default_capabilities()
+--)
 
 -- Lua
-lspconfig.lua_ls.setup({
+vim.lsp.config('lua_ls', {
+  capabilities = cmp_capabilities,
   settings = {
     Lua = {
       diagnostics = {
@@ -38,23 +39,30 @@ lspconfig.lua_ls.setup({
 })
 
 -- Elixir
-lspconfig.elixirls.setup({
+vim.lsp.config('elixirls', {
+  capabilities = cmp_capabilities,
   cmd = { vim.fn.expand('$HOME/dev/tools/elixir-ls/current/language_server.sh') },
 })
 
 -- Go
-lspconfig.gopls.setup({})
+vim.lsp.config('gopls', {
+  capabilities = cmp_capabilities,
+})
 
 -- C, C++
-lspconfig.clangd.setup({})
+vim.lsp.config('clangd', {
+  capabilities = cmp_capabilities,
+})
 
 -- JavaScript, TypeScript
-lspconfig.ts_ls.setup({
+vim.lsp.config('ts_ls', {
+  capabilities = cmp_capabilities,
   filetypes = { 'javascript', 'typescript' },
 })
 
 -- Python
-lspconfig.pylsp.setup({
+vim.lsp.config('pylsp', {
+  capabilities = cmp_capabilities,
   settings = {
     pylsp = {
       plugins = {
