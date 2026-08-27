@@ -31,13 +31,7 @@ return require('packer').startup(function(use)
     },
   }
 
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-      ts_update()
-    end
-  }
+  use 'romus204/tree-sitter-manager.nvim'
 
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
